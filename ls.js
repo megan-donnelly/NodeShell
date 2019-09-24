@@ -1,14 +1,14 @@
 const fs = require('fs');
 
-const folderFiles = function() {
-  return fs.readdir('./', 'utf8', (err, files) => {
+const ls = () => {
+  fs.readdir('./', 'utf8', (err, files) => {
     if (err) {
       throw err;
     } else {
-      console.log(files.join('\n'));
-      // return files.join('\n');
+      process.stdout.write(`${files.join('\n')}`);
+      process.stdout.write('\nprompt > ');
     }
   });
 };
 
-module.exports = folderFiles;
+module.exports = ls;

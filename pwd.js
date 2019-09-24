@@ -1,4 +1,4 @@
-const path = function() {
+const path = () => {
   return process.cwd();
 };
 
